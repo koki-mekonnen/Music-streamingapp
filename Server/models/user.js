@@ -56,9 +56,7 @@ userSchema.methods.generateAuthToken = function () {
             name: this.name,
             isAdmin: this.isAdmin
         },
-        process.env.JWTPRIVATEKEY, {
-        expiresin: "7d"
-    }
+        process.env.JWTPRIVATEKEY, { expiresIn: '1h' }
     )
     return token;
 }
